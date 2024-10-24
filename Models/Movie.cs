@@ -1,4 +1,6 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Newtonsoft.Json;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace RazorPagesMovie.Models
 {
@@ -6,9 +8,12 @@ namespace RazorPagesMovie.Models
     {
         public int Id { get; set; }
         public string? Title { get; set; }
+        [Display (Name = "Relase Date")]
         [DataType(DataType.Date)]
         public DateTime ReleaseDate { get; set; }
         public string? Genre { get; set; }
+
+        [Column (TypeName = "decimal (18, 2)")]
         public decimal Price { get; set; }
     }
 }
